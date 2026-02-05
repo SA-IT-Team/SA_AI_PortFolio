@@ -1,0 +1,143 @@
+You are a senior frontend engineer. Build a production-ready portfolio website for “SA Tech Private India Ltd” showcasing our AI products, agents, and AI-integrated solutions.
+ 
+TECH STACK (must follow)
+- React 18 + TypeScript
+- Vite (preferred) or CRA (only if needed). Use Vite by default.
+- Tailwind CSS (properly configured)
+- lucide-react icons
+- React Router for navigation (if multi-page). If you choose single-page with sections, still implement hash navigation + smooth scroll.
+- Clean, scalable folder structure, reusable components, and strongly typed data model.
+ 
+THEME / BRAND (strict)
+- Primary background: white (#FFFFFF)
+- Primary accent: light blue (use a modern palette around #3B82F6 / #60A5FA but keep it LIGHT)
+- Secondary accents: very light blue backgrounds (e.g., #EFF6FF / #DBEAFE)
+- Text: slate/neutral (e.g., #0F172A / #334155)
+- Overall look: minimal, premium, enterprise SaaS.
+- Avoid dark themes. Keep 90%+ white/light surfaces.
+ 
+WEBSITE GOALS
+- A landing page that clearly communicates: SA Tech builds AI products + agentic solutions.
+- Showcase all projects with cards, details, and “Visit App” links (URLs provided in a config object).
+- Filter and search projects (by category: Product / Agent / Platform / Solution; also tags like HR, Recruitment, Document AI, Communication, Sports, Fintech).
+- Each project card: icon, name, one-liner, key capabilities (bullets), tags, CTA buttons.
+- Clicking a project opens a detail view (modal OR dedicated route /projects/:slug). Detail includes: overview, features, use-cases, tech highlights, and Visit URL.
+- Top navigation with sections: Home, Solutions, Projects, About, Contact.
+- Sticky header with subtle blur, highlights active section.
+- Footer with company info and quick links.
+- Add a “Book a Demo” button (opens mailto or contact section).
+ 
+PAGES / SECTIONS
+1) Home (Hero)
+   - Headline: “AI Products & Agentic Solutions by SA Tech”
+   - Subtext: “We build production-grade AI systems that accelerate workflows, reduce manual effort, and improve decision-making.”
+   - CTA buttons: “Explore Projects” (scroll), “Contact Us” (scroll)
+   - A small stats row (static): e.g., “8+ Solutions”, “Agentic Workflows”, “Enterprise-ready”
+ 
+2) Solutions Overview (short section)
+   - 3-4 feature tiles: Agentic Automation, Document Intelligence, Hiring Intelligence, Communication Analytics
+   - Use lucide icons.
+ 
+3) Projects Grid
+   - Search input
+   - Filter pills (All, Products, Agents, Platforms, Integrations)
+   - Sort dropdown (A–Z, Category, Recently Added)
+   - Card grid responsive: 1 col mobile, 2 tablet, 3 desktop.
+   - Each card has “View Details” and “Visit App” (external link opens in new tab with rel noopener).
+ 
+4) About
+   - Short story: SA Tech Private India Ltd builds AI systems, products, and integrations.
+   - Emphasis on production readiness, security, scalability.
+ 
+5) Contact
+   - Simple contact form UI (front-end only; no backend). Include fields: Name, Email, Company, Message.
+   - Provide a mailto fallback.
+   - Add a “Schedule a call” CTA (placeholder link).
+ 
+6) Legal/Meta
+   - SEO: title, description, OpenGraph basics.
+   - Accessibility: keyboard navigable, focus rings, proper aria labels, contrast safe.
+   - Performance: avoid heavy libs; minimal animations.
+ 
+DATA MODEL (central config)
+Create src/data/projects.ts exporting a typed array:
+- id, slug, name, category (Product/Agent/Platform/Solution), shortDescription
+- longDescription
+- features: string[]
+- useCases: string[]
+- tags: string[]
+- icon: lucide icon name mapping
+- url: string (external app url)
+- status: “Live” | “Pilot” | “Internal” (optional)
+Also include src/data/company.ts for company constants.
+ 
+PROJECT CONTENT (use exactly these, rewrite cleanly for UI copy but keep meaning)
+ 
+A) SmartRFP
+- Category: Product
+- Description: AI-driven RFP & proposal automation platform.
+- Features: prepares RFP responses, generates proposal docs, rewrites content, PDF generation, agentic generation based on request/quote/industry/sector.
+ 
+B) TalentScreenAI
+- Category: Agent
+- Description: Custom agent integrated with Zoho Recruit for hiring intelligence.
+- Features: fetches jobs with JD/skills/experience/location/stack; upload multiple resumes (PDF/DOC), LinkedIn URLs; matches best roles; ranks by skills/experience; reduces screening time.
+ 
+C) CommAnalyser
+- Category: Solution
+- Description: AI communication intelligence for emails/docs/notes.
+- Features: imports emails/PDFs/docs/text; analyzes tone, sensitivity, ambiguity, confidence, satisfaction, sentiment; outputs overall communication score; useful for support/helpdesk/customer conversations.
+ 
+D) HRDocAssist
+- Category: Platform
+- Description: HR document retrieval assistant integrated with document storage.
+- Features: chat-based retrieval; search by Emp ID/email/phone; fetch payslips, appointment letters, Form 16, experience letters; reduces HR manual effort.
+ 
+E) SmartDTO
+- Category: Agent
+- Description: Document extraction + OCR + chat-based understanding.
+- Features: structured extraction with confidence scores; chat assistant post-extraction; deeper understanding and QA; supports industrial drawings, motors/energy distributor docs; technical standards-based evaluation; produces solution description & motivation.
+ 
+F) ScoutAI
+- Category: Agent
+- Description: Agentic scouting system for football player discovery & evaluation.
+- Features: collects player info from scouts across WhatsApp/email; maintains database; UI for filtering/sorting; AI evaluation + comparison; tuned with scouting guidelines; helps scouts identify top players.
+ 
+G) Edverify
+- Category: Solution
+- Description: Two-level candidate verification for examinations.
+- Features: biometric verification (face + fingerprint); document verification via QR scan or identity number; approves candidates for exam entry.
+ 
+H) BharatPe Unified Agent
+- Category: Solution / Platform (pick one, but include it prominently)
+- Description: Multi-agent system to unify BharatPe registration/approval workflows across Business, Ops, and Error Monitoring.
+- Features: parent coordinator agent with shared context; three child agents:
+  1) Business Insights Agent: exec-ready metrics, failure explanations, anomaly detection
+  2) Workflow & Action Agent: lifecycle tracking, bottlenecks, API actions, ownership
+  3) Incident & Error Intelligence Agent: error consolidation, correlation to drops, alert clustering, RCA support
+- Key differentiator: unified visibility + coordinated action across teams.
+ 
+URLS
+- Use placeholder urls for now like “https://example.com/smartrfp” etc.
+- Put all urls in the project config so I can replace later easily.
+ 
+DESIGN SYSTEM / COMPONENTS
+Create reusable components:
+- Container, SectionHeader, Button (primary/secondary/ghost), Badge/Tag, Card, Modal or Drawer, Input, Select, Navbar, Footer
+- Use Tailwind with consistent spacing scale, rounded corners (rounded-xl/2xl), soft shadows, subtle borders, hover states.
+- Use a light-blue gradient accent sparingly (e.g., hero background glow).
+- Add micro-interactions: hover lift, subtle transitions (duration-200).
+- Add “Back to top” floating button.
+ 
+ROUTING DECISION
+- Prefer: Home page with sections + /projects route + /projects/:slug detail route.
+- If you implement modal details, still support shareable route with slug.
+ 
+DELIVERABLES
+- Full working codebase.
+- Clear instructions in README: install, run, build.
+- No backend required.
+- Ensure TypeScript types are correct and no lint/type errors.
+ 
+OUTPUT
+Generate all required files. Keep code clean and readable. No placeholder “lorem ipsum” except where unavoidable.

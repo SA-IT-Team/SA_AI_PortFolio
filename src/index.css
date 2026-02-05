@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-w-0 text-slate-primary antialiased;
+  position: relative;
+  background-color: #E0F2FE;
+  background-image:
+    radial-gradient(ellipse 100% 60% at 50% -10%, rgba(2, 132, 199, 0.25), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 20%, rgba(14, 165, 233, 0.18), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 0% 60%, rgba(56, 189, 248, 0.12), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/assets/saportfoliobg.png');
+  background-size: 130%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.28;
+}
+
+/* Stagger children: use .stagger-children and .stagger-child */
+.stagger-children .stagger-child {
+  opacity: 0;
+  animation: fadeInUp 0.55s ease-out forwards;
+}
+.stagger-children .stagger-child:nth-child(1) { animation-delay: 0ms; }
+.stagger-children .stagger-child:nth-child(2) { animation-delay: 60ms; }
+.stagger-children .stagger-child:nth-child(3) { animation-delay: 120ms; }
+.stagger-children .stagger-child:nth-child(4) { animation-delay: 180ms; }
+.stagger-children .stagger-child:nth-child(5) { animation-delay: 240ms; }
+.stagger-children .stagger-child:nth-child(6) { animation-delay: 300ms; }
+.stagger-children .stagger-child:nth-child(7) { animation-delay: 360ms; }
+.stagger-children .stagger-child:nth-child(8) { animation-delay: 420ms; }
+.stagger-children .stagger-child:nth-child(9) { animation-delay: 480ms; }
+.stagger-children .stagger-child:nth-child(10) { animation-delay: 540ms; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card: reveal full text on hover (override line-clamp and truncate) */
+.group:hover .card-reveal {
+  overflow: visible;
+  display: block;
+  -webkit-line-clamp: unset;
+  white-space: normal;
+  text-overflow: unset;
+}
+.group:hover .card-reveal-truncate {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Ambient bubbles (decorative circles) */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(14,165,233,0.15));
+  pointer-events: none;
+}
+.sparkle-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(14,165,233,0.7);
+  pointer-events: none;
+}
