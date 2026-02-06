@@ -135,10 +135,10 @@ export const projects: Project[] = [
   {
     id: '8',
     slug: 'bharatpe-unified-agent',
-    name: 'BharatPe Unified Agent',
+    name: 'Smart Unified Agent',
     category: 'Platform',
-    shortDescription: 'Multi-agent system unifying BharatPe registration and approval workflows.',
-    longDescription: 'A multi-agent system that unifies BharatPe registration and approval workflows across Business, Ops, and Error Monitoring. A parent coordinator agent maintains shared context with three child agents: Business Insights (exec-ready metrics, failure explanations, anomaly detection), Workflow & Action (lifecycle tracking, bottlenecks, API actions, ownership), and Incident & Error Intelligence (error consolidation, correlation to drops, alert clustering, RCA support). Key differentiator: unified visibility and coordinated action across teams.',
+    shortDescription: 'Multi-agent system unifying Banking Transactional registration and approval workflows.',
+    longDescription: 'A multi-agent system that unifies Transactional registration and approval workflows across Business, Ops, and Error Monitoring. A parent coordinator agent maintains shared context with three child agents: Business Insights (exec-ready metrics, failure explanations, anomaly detection), Workflow & Action (lifecycle tracking, bottlenecks, API actions, ownership), and Incident & Error Intelligence (error consolidation, correlation to drops, alert clustering, RCA support). Key differentiator: unified visibility and coordinated action across teams.',
     features: [
       'Parent coordinator agent with shared context',
       'Business Insights Agent: exec-ready metrics, failure explanations, anomaly detection',
