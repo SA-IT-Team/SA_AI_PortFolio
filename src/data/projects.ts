@@ -92,7 +92,7 @@ export const projects: Project[] = [
     useCases: ['Technical documentation', 'Energy sector', 'Compliance'],
     tags: ['Document AI', 'OCR', 'Technical'],
     icon: 'FileSearch',
-    url: 'https://tatamotorsmartdto-git-master-sa-technologies.vercel.app',
+    url: 'https://dtoabbwebappv1-d5agfndncbc7g9bp.centralindia-01.azurewebsites.net/',
     status: 'Live',
   },
   {
