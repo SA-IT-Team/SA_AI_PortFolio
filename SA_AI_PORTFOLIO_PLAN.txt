@@ -1,4 +1,4 @@
-You are a senior frontend engineer. Build a production-ready portfolio website for “SA Tech Private India Ltd” showcasing our AI products, agents, and AI-integrated solutions.
+You are a senior frontend engineer. Build a production-ready portfolio website for “SA Tech India Ltd” showcasing our AI products, agents, and AI-integrated solutions.
  
 TECH STACK (must follow)
 - React 18 + TypeScript
@@ -46,7 +46,7 @@ PAGES / SECTIONS
    - Each card has “View Details” and “Visit App” (external link opens in new tab with rel noopener).
  
 4) About
-   - Short story: SA Tech Private India Ltd builds AI systems, products, and integrations.
+   - Short story: SA Tech India Ltd builds AI systems, products, and integrations.
    - Emphasis on production readiness, security, scalability.
  
 5) Contact

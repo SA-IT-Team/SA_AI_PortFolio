@@ -1,5 +1,6 @@
 export type ProjectCategory = 'Product' | 'Agent' | 'Platform' | 'Solution'
 export type ProjectStatus = 'Live' | 'Pilot' | 'Internal'
+export type ProjectTheme = 'sky' | 'violet' | 'emerald' | 'amber' | 'rose' | 'indigo' | 'teal' | 'orange'
 
 export interface Project {
   id: string
@@ -12,6 +13,7 @@ export interface Project {
   useCases: string[]
   tags: string[]
   icon: string
-  url: string
+  theme: ProjectTheme
+  url?: string
   status?: ProjectStatus
 }
